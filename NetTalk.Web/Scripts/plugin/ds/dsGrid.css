@@ -1,0 +1,246 @@
+﻿.dsPager-grid{
+    border-collapse:collapse;
+    border:1px solid silver;
+    font-family:Tahoma;
+    font-size:8pt;
+    direction:rtl;
+    text-align:right;
+    margin:5px 0;
+    width:100%;
+    /*direction:ltr;
+    text-align:left;*/
+}
+.dsPager-grid th, .dsPager-grid td
+{
+    padding: 3px;
+    border: 1px solid #E2E2E2;
+    margin:0;
+}
+.dsPager-grid .altrow
+{
+    background-color: #EFEFF1;
+}
+.dsPager-grid tbody tr{
+    /*cursor:pointer;*/
+    height:25px;
+    overflow-y: hidden;
+}
+.dsPager-grid tbody tr:hover
+{
+    background-color: #FFFFCC;
+}
+.dsPager-grid tbody tr.selected
+{
+    background-color: #FFFF99;
+}
+.dsPager-grid td.center{
+    text-align:center;
+}
+.dsPager-grid td.ltr{
+    text-align:left;
+    direction:ltr;
+}
+.dsPager-grid img.sort{
+    vertical-align:middle;
+    margin:0 5px;
+}
+.dsPager-grid a{
+    text-decoration:none;
+    color:green;
+}
+.dsPager-grid a:hover{
+    color:Red;
+}
+.dsPager-grid th{
+    font-weight:600;
+    vertical-align:middle;
+    height:16px;
+    background-image:url('images/fhbg.gif');
+    background-repeat:repeat-x;
+    text-align:center;
+    background-color: #EBECEE;
+}
+.dsPager{
+	height:24px;
+	padding:3px;
+	color:black;
+	background-color:#F5F5F5;
+	border:1px solid #CCCCCC;
+	direction:ltr;
+	text-align:left;
+}
+.dsPager input,.dsPager table td{
+	font-family:Tahoma;
+	font-size:8pt;
+}
+.dsPager table{
+	border-collapse:collapse;
+}
+.dsPager table td{
+	margin:0;
+	padding:2px;
+}
+.dsPager-btn{
+	text-decoration:none;
+	display:block;
+	height:16px;
+	border:1px solid #F5F5F5;
+	background-repeat:no-repeat;
+	padding:0px 5px;
+}
+.dsPager-seprator{
+    width:16px;
+    height:16px;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-image:url('images/line.gif');
+}
+.dsPager-btn:hover{
+	background-color: #C9DFF5;
+	border-style: solid;
+	border-color: #E4EFFA #97C1EC #97C1EC #E4EFFA;
+}
+.dsPager-first{
+	background-image:url('images/first.gif');
+	background-position:center;
+	width:20px;
+	padding:0px;
+}
+.dsPager-last{
+	background-image:url('images/last.gif');
+	background-position:center;
+	width:20px;
+	padding:0px;
+}
+.dsPager-next{
+	background-image:url('images/next.gif');
+	background-position:center;
+	width:20px;
+	padding:0px;
+}
+.dsPager-prev{
+	background-image:url('images/prev.gif');
+	background-position:center;
+	width:20px;
+	padding:0px;
+}
+.dsPager-add,.dsPager-down,.dsPager-delete,.dsPager-print,.dsPager-edit,.dsPager-export,.dsPager-reload,.dsPager-approve,.dsPager-unapprove,.dsPager-unfilter{
+    width:24px;
+    height:24px;
+    padding:2px;
+    background-position:center center;
+}
+.dsPager-down{
+    background-image:url('images/24/down.png');
+}
+.dsPager-add{
+    background-image:url('images/24/add.png');
+}
+.dsPager-delete{
+    background-image:url('images/24/delete.png');
+}
+.dsPager-export{
+    background-image:url('images/24/save.png');
+}
+.dsPager-reload{
+    background-image:url('images/24/refresh.png');
+}
+.dsPager-approve{
+    background-image:url(images/24/approve.png);
+}
+.dsPager-unapprove{
+    background-image:url(images/24/unapprove.png);
+}
+.dsPager-unfilter{
+    background-image:url(images/24/filter.png);
+}
+.dsPager-edit{
+    background-image:url(images/24/edit.png);
+}
+.dsPager-print{
+    background-image:url(images/24/print.png);
+}
+.dsPager input.text{
+	width:50px;
+	border:1px solid #c0c0c0;
+	text-align:center;
+}
+.f-sortasc
+{
+    padding-left:20px;
+    background-image:url(images/uup.png);
+}
+.f-sortdesc
+{
+    padding-left:20px;
+    background-image:url(images/ddn.png);
+}
+.dsPager-holder, .dsPager-gridholder{
+	/*width:600px;*/
+}
+.dsPager-gridholder{
+	/*height:200px;*/
+/*	overflow:auto;*/
+}
+.dsPagerFilter{
+	width:145px;
+	border:1px black solid;
+	background-color:#F5F5F5;
+	direction:rtl;
+	position:absolute;
+}
+.dsPagerFilter table{
+	border-collapse:collapse;
+	width:145px;
+	padding:0px;
+	margin:0px;
+}
+.dsPagerFilter table td{
+	padding:5px;
+}
+.dsPagerFilter select{
+	width:135px;
+}
+.dsPagerFilter input.input-text{
+	width:127px;
+}
+.dsPager-grid th span{
+	display:block;
+	width:16px;
+	height:16px;
+	float:left;
+	background-repeat:no-repeat;
+	/*margin-right:5px;
+	margin-top:4px;*/
+	cursor:pointer;
+}
+.dsPager-grid th span.dsPagerAddFilter{
+    	background-image:url(images/filter_add.gif);
+}
+.dsPager-grid th span.dsPagerRemoveFilter{
+    	background-image:url(images/filter_delete.gif);
+}
+.dsPagerFilterClose{
+	display: block;
+	float:right;
+	width:16px;
+	height:16px;
+	margin-left:5px;
+	background-image: url('images/close.gif');
+	background-repeat: no-repeat;
+}
+#filterHeader{
+    cursor:move;
+}
+.dsPager-title{
+    direction:rtl;
+    text-align:right;
+}
+.dsPager-title table{
+    width:99%;
+}
+.dsPager-title table td{
+    font-family:Arial;
+    font-size:12pt;
+    font-weight:bold;
+}

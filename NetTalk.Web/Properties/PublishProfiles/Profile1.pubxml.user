@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2015-11-12T18:05:11.0630332+03:30</TimeStampOfAssociatedLegacyPublishXmlFile>
+    <_PublishTargetUrl>C:\Users\Mahdi\Documents\Visual Studio 2015\Projects\nettalk\NetTalk.Web\..\Web.Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Admin/Default.aspx">
+      <publishTime>11/12/2015 18:58:34</publishTime>
+    </File>
+    <File Include="Admin/UsersList.aspx">
+      <publishTime>11/12/2015 19:52:47</publishTime>
+    </File>
+    <File Include="Admin/Web.config">
+      <publishTime>11/12/2015 18:05:04</publishTime>
+    </File>
+    <File Include="App_Data/Application.xml">
+      <publishTime>11/12/2015 18:54:23</publishTime>
+    </File>
+    <File Include="App_Data/XSDGen.txt">
+      <publishTime>11/12/2015 18:05:04</publishTime>
+    </File>
+    <File Include="BaseSite.Master">
+      <publishTime>11/12/2015 18:48:51</publishTime>
+    </File>
+    <File Include="bin/agsXMPP.dll">
+      <publishTime>11/12/2015 18:04:50</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/12/2015 18:19:54</publishTime>
+    </File>
+    <File Include="bin/NetTalk.BLL.dll">
+      <publishTime>11/12/2015 20:45:01</publishTime>
+    </File>
+    <File Include="bin/NetTalk.Common.dll">
+      <publishTime>11/12/2015 20:44:42</publishTime>
+    </File>
+    <File Include="bin/NetTalk.DAL.dll">
+      <publishTime>11/12/2015 20:45:00</publishTime>
+    </File>
+    <File Include="bin/NetTalk.Web.dll">
+      <publishTime>11/12/2015 20:45:05</publishTime>
+    </File>
+    <File Include="Copyright.aspx">
+      <publishTime>11/12/2015 18:50:48</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>11/12/2015 18:05:10</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/12/2015 18:05:10</publishTime>
+    </File>
+    <File Include="Login/Default.aspx">
+      <publishTime>11/12/2015 18:05:10</publishTime>
+    </File>
+    <File Include="Login/login-back.jpg">
+      <publishTime>11/12/2015 18:05:10</publishTime>
+    </File>
+    <File Include="Login/login.css">
+      <publishTime>11/12/2015 18:05:10</publishTime>
+    </File>
+    <File Include="Login/Logout.ashx">
+      <publishTime>11/12/2015 18:05:10</publishTime>
+    </File>
+    <File Include="Login/security.gif">
+      <publishTime>11/12/2015 18:05:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.2.min.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.5.custom.min.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery.autocomplete.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery.color.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/ListItems.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/newsbar.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/PKI.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/plugin/blockuijquery.blockUI.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/plugin/contextmenu/jquery.contextMenu.css">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/plugin/contextmenu/jquery.contextMenu.js">
+      <publishTime>11/12/2015 18:05:15</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/dsGrid.css">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/dsGrid.js">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/add.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/approve.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/delete.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/down.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/edit.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/filter.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/print.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/refresh.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/save.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/sort_ascend.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/sort_descend.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/24/unapprove.png">
+      <publishTime>11/12/2015 18:05:16</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/add.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/bg.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/btn-sprite.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/close.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/close.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/ddn.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/dn.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/fhbg.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/filter.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/filter_add.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/filter_delete.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/first.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/hl.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/last.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/line.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/load.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/load.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/magnifier.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/max.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/next.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/prev.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/server_off.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/server_on.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/tp.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/up.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/uup.png">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ds/images/wbg.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/jalaliCalendar.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/jquery.cookie.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/jquery.meio.mask.min.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/main.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/menu/c_addon_fx_fade.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/menu/c_addon_fx_slide.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/menu/c_config.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/menu/c_smartmenus.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/menu/images/sit-8_20.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/menu/images/sit-8_21.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/menu/v_arrow_left.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/menu/v_arrow_left_over.gif">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/tree/dtree.css">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/tree/dtree.js">
+      <publishTime>11/12/2015 18:05:18</publishTime>
+    </File>
+    <File Include="Scripts/plugin/ui.datepicker-fa.js">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-bg_flat_55_fbec88_40x100.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-bg_glass_85_dfeffc_1x400.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-icons_217bc0_256x240.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-icons_469bdd_256x240.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-icons_6da8d5_256x240.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-icons_d8e7f3_256x240.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/images/ui-icons_f9bd01_256x240.png">
+      <publishTime>11/12/2015 18:05:19</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/redmond/jquery-ui-1.8.5.custom.css">
+      <publishTime>11/12/2015 18:05:20</publishTime>
+    </File>
+    <File Include="Scripts/plugin/uiskin/RTL.css">
+      <publishTime>11/12/2015 18:05:20</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/BrowserCompatible.js">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/images/bg.gif">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/images/cancel.gif">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/images/chrome.gif">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/images/firefox.gif">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/images/flock.gif">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/images/iexplorer.gif">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/images/opera.gif">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/stopIE6/images/safari.gif">
+      <publishTime>11/12/2015 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/Style/images/active.gif">
+      <publishTime>11/12/2015 18:05:22</publishTime>
+    </File>
+    <File Include="Scripts/Style/images/bg-h.png">
+      <publishTime>11/12/2015 18:05:22</publishTime>
+    </File>
+    <File Include="Scripts/Style/images/inactive.png">
+      <publishTime>11/12/2015 18:05:22</publishTime>
+    </File>
+    <File Include="Scripts/Style/images/stripe4.gif">
+      <publishTime>11/12/2015 18:05:22</publishTime>
+    </File>
+    <File Include="Scripts/Style/images/Textbox.jpg">
+      <publishTime>11/12/2015 18:05:22</publishTime>
+    </File>
+    <File Include="Scripts/Style/images/XMPP-Logo-png.png">
+      <publishTime>11/12/2015 18:05:22</publishTime>
+    </File>
+    <File Include="Scripts/Style/main.css">
+      <publishTime>11/12/2015 18:59:32</publishTime>
+    </File>
+    <File Include="Scripts/swfobject/expressInstall.swf">
+      <publishTime>11/12/2015 18:05:23</publishTime>
+    </File>
+    <File Include="Scripts/swfobject/swfobject.js">
+      <publishTime>11/12/2015 18:05:23</publishTime>
+    </File>
+    <File Include="Scripts/TextList.js">
+      <publishTime>11/12/2015 18:05:23</publishTime>
+    </File>
+    <File Include="text.ashx">
+      <publishTime>11/12/2015 18:05:24</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/12/2015 20:45:08</publishTime>
+    </File>
+    <File Include="Webservice/Index.asmx">
+      <publishTime>11/12/2015 18:05:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

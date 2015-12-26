@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BaseSite.master.cs" Inherits="NetTalk.Web.BaseSite" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script language="javascript" type="text/javascript" src="/Scripts/jquery-1.4.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/Scripts/jquery-ui-1.8.5.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/Scripts/plugin/jalaliCalendar.js"></script>
+    <script language="javascript" type="text/javascript" src="/Scripts/plugin/ui.datepicker-fa.js"></script>
+    <link rel="Stylesheet" type="text/css" href="/Scripts/Style/main.css" />
+    <link rel="Stylesheet" type="text/css" href="/Scripts/plugin/uiskin/redmond/jquery-ui-1.8.5.custom.css" />
+    <link rel="Stylesheet" type="text/css" href="/Scripts/plugin/uiskin/RTL.css" />
+    <script language="javascript" type="text/javascript">
+        $(function () {
+            $(":submit, :button").button();
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="sitebase">
+        <div id="sitebase_header">
+            <h1>
+                <span id="sitebase_header_inner"><span id="sitebase_header_title">Messenger Server</span>
+                    &nbsp;<span id="sitebase_header_subtitle">Extensible Messaging and Presence Protocol</span>
+                </span>
+            </h1>
+        </div>
+        <div id="sitebase_inner">
+            <div id="sitebase_middle">
+                <div id="RightSide">
+                    <p>
+                        <a href="/Default.aspx">Home Page</a></p>
+                    <% if (Page.User.Identity.IsAuthenticated)
+                       { %>
+                       <p><a href="/Admin/Default.aspx">Manager Home</a></p>
+                       <p><a href="/Admin/UsersList.aspx">User List</a></p>
+                       <p><a href="/Login/Logout.ashx">Logout</a></p>
+                    <%}
+                       else
+                       { %>
+                    <p>
+                        <a href="/Login">Login</a>
+                    </p>
+                    <%} %>
+                    <p class="line">
+                    </p>
+                    <p>
+                        <a href="/Copyright.aspx">Copyright information</a>
+                    </p>
+                    <asp:ContentPlaceHolder ID="RightContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div id="LeftSide">
+                    <asp:ContentPlaceHolder ID="MianContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div style="clear: both">
+                </div>
+            </div>
+        </div>
+        <div id="sitebase_bottom">By Mahdi Yousefi, see at codeplex project nettalk.codeplex.com<br />
+            <a target="_blank" href="https://opensource.org/licenses/MIT">&copy; The MIT License (MIT)</a>.</div>
+    </div>
+    </form>
+</body>
+</html>

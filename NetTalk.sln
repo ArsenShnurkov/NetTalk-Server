@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTalk.Web", "NetTalk.Web\NetTalk.Web.csproj", "{55F9E19E-C7E8-46D4-AAD9-F68CB3B800D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2934A97E-4029-4051-807E-BBF8B402C8EE} = {2934A97E-4029-4051-807E-BBF8B402C8EE}
+		{470C9CA6-0F98-42B1-841F-DA1526B63011} = {470C9CA6-0F98-42B1-841F-DA1526B63011}
+		{0775A4E2-777D-4610-9C03-F6DC1351AB3A} = {0775A4E2-777D-4610-9C03-F6DC1351AB3A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTalk.DAL", "NetTalk.DAL\NetTalk.DAL.csproj", "{0775A4E2-777D-4610-9C03-F6DC1351AB3A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{470C9CA6-0F98-42B1-841F-DA1526B63011} = {470C9CA6-0F98-42B1-841F-DA1526B63011}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTalk.BLL", "NetTalk.BLL\NetTalk.BLL.csproj", "{2934A97E-4029-4051-807E-BBF8B402C8EE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{470C9CA6-0F98-42B1-841F-DA1526B63011} = {470C9CA6-0F98-42B1-841F-DA1526B63011}
+		{0775A4E2-777D-4610-9C03-F6DC1351AB3A} = {0775A4E2-777D-4610-9C03-F6DC1351AB3A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTalk.Common", "NetTalk.Common\NetTalk.Common.csproj", "{470C9CA6-0F98-42B1-841F-DA1526B63011}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55F9E19E-C7E8-46D4-AAD9-F68CB3B800D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F9E19E-C7E8-46D4-AAD9-F68CB3B800D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F9E19E-C7E8-46D4-AAD9-F68CB3B800D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F9E19E-C7E8-46D4-AAD9-F68CB3B800D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0775A4E2-777D-4610-9C03-F6DC1351AB3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0775A4E2-777D-4610-9C03-F6DC1351AB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0775A4E2-777D-4610-9C03-F6DC1351AB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0775A4E2-777D-4610-9C03-F6DC1351AB3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2934A97E-4029-4051-807E-BBF8B402C8EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2934A97E-4029-4051-807E-BBF8B402C8EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2934A97E-4029-4051-807E-BBF8B402C8EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2934A97E-4029-4051-807E-BBF8B402C8EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470C9CA6-0F98-42B1-841F-DA1526B63011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470C9CA6-0F98-42B1-841F-DA1526B63011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470C9CA6-0F98-42B1-841F-DA1526B63011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470C9CA6-0F98-42B1-841F-DA1526B63011}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

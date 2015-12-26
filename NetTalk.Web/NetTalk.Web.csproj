@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55F9E19E-C7E8-46D4-AAD9-F68CB3B800D4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetTalk.Web</RootNamespace>
+    <AssemblyName>NetTalk.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="agsXMPP">
+      <HintPath>..\Library\agsXMPP.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\UsersList.aspx" />
+    <Content Include="App_Data\Application.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\XSDGen.txt" />
+    <Content Include="Copyright.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Login\Default.aspx" />
+    <Content Include="Login\login-back.jpg" />
+    <Content Include="Login\login.css" />
+    <Content Include="Login\security.gif" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.5.custom.min.js" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.color.js" />
+    <Content Include="Scripts\ListItems.js" />
+    <Content Include="Scripts\newsbar.js" />
+    <Content Include="Scripts\PKI.js" />
+    <Content Include="Scripts\plugin\blockuijquery.blockUI.js" />
+    <Content Include="Scripts\plugin\contextmenu\jquery.contextMenu.css" />
+    <Content Include="Scripts\plugin\contextmenu\jquery.contextMenu.js" />
+    <Content Include="Scripts\plugin\ds\dsGrid.css" />
+    <Content Include="Scripts\plugin\ds\dsGrid.js" />
+    <Content Include="Scripts\plugin\ds\images\24\add.png" />
+    <Content Include="Scripts\plugin\ds\images\24\approve.png" />
+    <Content Include="Scripts\plugin\ds\images\24\delete.png" />
+    <Content Include="Scripts\plugin\ds\images\24\down.png" />
+    <Content Include="Scripts\plugin\ds\images\24\edit.png" />
+    <Content Include="Scripts\plugin\ds\images\24\filter.png" />
+    <Content Include="Scripts\plugin\ds\images\24\print.png" />
+    <Content Include="Scripts\plugin\ds\images\24\refresh.png" />
+    <Content Include="Scripts\plugin\ds\images\24\save.png" />
+    <Content Include="Scripts\plugin\ds\images\24\sort_ascend.png" />
+    <Content Include="Scripts\plugin\ds\images\24\sort_descend.png" />
+    <Content Include="Scripts\plugin\ds\images\24\unapprove.png" />
+    <Content Include="Scripts\plugin\ds\images\add.png" />
+    <Content Include="Scripts\plugin\ds\images\bg.gif" />
+    <Content Include="Scripts\plugin\ds\images\btn-sprite.gif" />
+    <Content Include="Scripts\plugin\ds\images\close.gif" />
+    <Content Include="Scripts\plugin\ds\images\close.png" />
+    <Content Include="Scripts\plugin\ds\images\ddn.png" />
+    <Content Include="Scripts\plugin\ds\images\dn.png" />
+    <Content Include="Scripts\plugin\ds\images\fhbg.gif" />
+    <Content Include="Scripts\plugin\ds\images\filter.gif" />
+    <Content Include="Scripts\plugin\ds\images\filter_add.gif" />
+    <Content Include="Scripts\plugin\ds\images\filter_delete.gif" />
+    <Content Include="Scripts\plugin\ds\images\first.gif" />
+    <Content Include="Scripts\plugin\ds\images\hl.png" />
+    <Content Include="Scripts\plugin\ds\images\last.gif" />
+    <Content Include="Scripts\plugin\ds\images\line.gif" />
+    <Content Include="Scripts\plugin\ds\images\load.gif" />
+    <Content Include="Scripts\plugin\ds\images\load.png" />
+    <Content Include="Scripts\plugin\ds\images\magnifier.png" />
+    <Content Include="Scripts\plugin\ds\images\max.gif" />
+    <Content Include="Scripts\plugin\ds\images\next.gif" />
+    <Content Include="Scripts\plugin\ds\images\prev.gif" />
+    <Content Include="Scripts\plugin\ds\images\server_off.png" />
+    <Content Include="Scripts\plugin\ds\images\server_on.png" />
+    <Content Include="Scripts\plugin\ds\images\tp.gif" />
+    <Content Include="Scripts\plugin\ds\images\up.png" />
+    <Content Include="Scripts\plugin\ds\images\uup.png" />
+    <Content Include="Scripts\plugin\ds\images\wbg.gif" />
+    <Content Include="Scripts\plugin\jalaliCalendar.js" />
+    <Content Include="Scripts\plugin\jquery.cookie.js" />
+    <Content Include="Scripts\plugin\jquery.meio.mask.min.js" />
+    <Content Include="Scripts\plugin\main.js" />
+    <Content Include="Scripts\plugin\menu\c_addon_fx_fade.js" />
+    <Content Include="Scripts\plugin\menu\c_addon_fx_slide.js" />
+    <Content Include="Scripts\plugin\menu\c_config.js" />
+    <Content Include="Scripts\plugin\menu\c_smartmenus.js" />
+    <Content Include="Scripts\plugin\menu\images\sit-8_20.gif" />
+    <Content Include="Scripts\plugin\menu\images\sit-8_21.gif" />
+    <Content Include="Scripts\plugin\menu\v_arrow_left.gif" />
+    <Content Include="Scripts\plugin\menu\v_arrow_left_over.gif" />
+    <Content Include="Scripts\plugin\tree\dtree.css" />
+    <Content Include="Scripts\plugin\tree\dtree.js" />
+    <Content Include="Scripts\plugin\ui.datepicker-fa.js" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Scripts\plugin\uiskin\redmond\jquery-ui-1.8.5.custom.css" />
+    <Content Include="Scripts\plugin\uiskin\RTL.css" />
+    <Content Include="Scripts\stopIE6\BrowserCompatible.js" />
+    <Content Include="Scripts\stopIE6\images\bg.gif" />
+    <Content Include="Scripts\stopIE6\images\cancel.gif" />
+    <Content Include="Scripts\stopIE6\images\chrome.gif" />
+    <Content Include="Scripts\stopIE6\images\firefox.gif" />
+    <Content Include="Scripts\stopIE6\images\flock.gif" />
+    <Content Include="Scripts\stopIE6\images\iexplorer.gif" />
+    <Content Include="Scripts\stopIE6\images\opera.gif" />
+    <Content Include="Scripts\stopIE6\images\safari.gif" />
+    <Content Include="Scripts\Style\images\active.gif" />
+    <Content Include="Scripts\Style\images\bg-h.png" />
+    <Content Include="Scripts\Style\images\inactive.png" />
+    <Content Include="Scripts\Style\images\stripe4.gif" />
+    <Content Include="Scripts\Style\images\Textbox.jpg" />
+    <Content Include="Scripts\Style\images\XMPP-Logo-png.png" />
+    <Content Include="Scripts\Style\main.css" />
+    <Content Include="Scripts\swfobject\expressInstall.swf" />
+    <Content Include="Scripts\swfobject\swfobject.js" />
+    <Content Include="Scripts\TextList.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Webservice\Index.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UsersList.aspx.cs">
+      <DependentUpon>UsersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UsersList.aspx.designer.cs">
+      <DependentUpon>UsersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseSite.Master.cs">
+      <DependentUpon>BaseSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseSite.Master.designer.cs">
+      <DependentUpon>BaseSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Codes\Application.cs" />
+    <Compile Include="Codes\Config.cs" />
+    <Compile Include="Codes\Controls\Grid.cs" />
+    <Compile Include="Codes\Controls\InputTypes.cs" />
+    <Compile Include="Codes\Controls\Menus.cs" />
+    <Compile Include="Codes\Controls\Tree.cs" />
+    <Compile Include="Codes\Controls\UIGrid.cs" />
+    <Compile Include="Codes\ImageTools.cs" />
+    <Compile Include="Codes\Log.cs" />
+    <Compile Include="Codes\Services\BaseCacheService.cs" />
+    <Compile Include="Codes\Services\CacheService.cs" />
+    <Compile Include="Codes\ThreadTools\Connection.cs" />
+    <Compile Include="Codes\ThreadTools\Main.cs" />
+    <Compile Include="Codes\ThreadTools\OnlineUser.cs" />
+    <Compile Include="Codes\Tools.cs" />
+    <Compile Include="Codes\XML\IQs.cs" />
+    <Compile Include="Codes\XML\Message.cs" />
+    <Compile Include="Codes\XML\Proccess.cs" />
+    <Compile Include="Codes\XML\Roster.cs" />
+    <Compile Include="Codes\XML\Server.cs" />
+    <Compile Include="Copyright.aspx.cs">
+      <DependentUpon>Copyright.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Copyright.aspx.designer.cs">
+      <DependentUpon>Copyright.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Logout.ashx.cs">
+      <DependentUpon>Logout.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="text.ashx.cs">
+      <DependentUpon>text.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Webservice\Index.asmx.cs">
+      <DependentUpon>Index.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetTalk.BLL\NetTalk.BLL.csproj">
+      <Project>{2934A97E-4029-4051-807E-BBF8B402C8EE}</Project>
+      <Name>NetTalk.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetTalk.Common\NetTalk.Common.csproj">
+      <Project>{470C9CA6-0F98-42B1-841F-DA1526B63011}</Project>
+      <Name>NetTalk.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetTalk.DAL\NetTalk.DAL.csproj">
+      <Project>{0775A4E2-777D-4610-9C03-F6DC1351AB3A}</Project>
+      <Name>NetTalk.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\avatar\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="text.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Web.config" />
+    <None Include="App_Data\Application.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="BaseSite.Master" />
+    <Content Include="Login\Logout.ashx" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1089</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

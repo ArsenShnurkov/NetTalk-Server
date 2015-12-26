@@ -1,0 +1,15 @@
+﻿.ui-widget { font-family:tahoma; font-size:8pt; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family:tahoma; font-size:8pt }
+.ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em  2.2em .5em .5em; }
+.ui-accordion .ui-accordion-header .ui-icon { position: absolute;left:auto; right: .5em; top: 50%; margin-top: -8px; }
+.ui-widget-content {direction:rtl; text-align:right;}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {left: auto;}
+.ui-dialog .ui-dialog-title { float:right; margin: .1em 0 .2em; } 
+.ui-dialog .ui-dialog-titlebar-close { position: absolute;right:auto; left: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-content { border: 0; padding: .5em 0em; background: none; overflow: auto; zoom: 1; }
+.ui-tabs .ui-tabs-nav li {  float:right; }
+.ui-icon-triangle-1-w { background-position: -32px -16px; }
+.ui-icon-triangle-1-e { background-position: -96px -16px; }
+.ui-datepicker { display:none; }
+.ui-tabs .ui-tabs-nav li { display:inline; width:auto; min-width:auto; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected{ padding-bottom: 0px; }

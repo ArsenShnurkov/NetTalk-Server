@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <organization>My Personal Website</organization>
+  <serverup>true</serverup>
+  <domain>127.0.0.1</domain>
+  <path>C:\Users\Mahdi\Documents\Visual Studio 2015\Projects\nettalk\NetTalk.Web\</path>
+  <lastlogclear>
+    <year>2015</year>
+    <month>11</month>
+  </lastlogclear>
+  <access>
+    <changepic>true</changepic>
+    <changestatus>true</changestatus>
+    <changepass>true</changepass>
+  </access>
+</config>

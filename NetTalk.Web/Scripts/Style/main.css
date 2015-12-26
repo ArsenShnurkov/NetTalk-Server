@@ -1,0 +1,144 @@
+﻿body{
+	margin:0px;
+	padding:0px;
+	color:#000066;
+}
+a{
+	text-decoration:none;
+	color: green;
+}
+a:hover{
+	color:orange;
+}
+a img{
+	border:none;
+}
+body, select, input, textarea, table, td, th{
+	font-family: Tahoma;
+	font-size: 8pt;
+}
+#sitebase_header{
+	height: 110px;
+	background-color: #4592AB;
+	background-image: url('images/stripe4.gif');
+	border-bottom: #454545 5px solid;
+	border-bottom-color: #1B6085;
+}
+#sitebase_header h1{
+	padding:0px;
+	margin:0px;
+	height:75px;
+	padding-top:30px;
+	background-image:url('images/XMPP-Logo-png.png');
+	background-position: 10px center;
+	background-repeat:no-repeat;
+	width:840px;
+	padding-left: 120px;
+	margin-left:auto;
+	margin-right:auto;
+	color:white;
+	font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size:25pt;
+	font-style:italic;
+}
+#sitebase_header_subtitle{
+	display:block;
+	font-size:14pt;
+}
+#sitebase_inner{
+	margin-left:auto;
+	margin-right:auto;
+	width:960px;
+	margin-top:5px;
+}
+#sitebase_middle{
+	padding:5px;
+	/*direction:rtl;*/
+	/*text-align:right;*/
+}
+#sitebase_bottom{
+	border-top: 1px solid #A7CADC;
+	padding: 20px;
+	background-color: #C9DEE9;
+	color: #769EDC;
+	text-align: center;
+	/*direction: rtl;*/
+}
+.nodetitle, h2{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+}
+.nodespace, h2{
+	padding: 5px;
+	background-color: #E2E2E2;
+	margin-bottom:5px;
+}
+input, textarea, select {
+	font-family:Tahoma;
+	font-size:9pt;
+}
+.input-textbox, .input-textarea{
+	border:1px silver solid;
+	background-image: url('images/Textbox.jpg');
+	background-repeat:repeat-x;
+	background-position:center top;
+	padding:3px;
+}
+.input-textbox:hover{
+	border:1px solid black;
+}
+.input-textarea{
+	font-size:10pt;
+	line-height:150%;
+}
+.ltr{
+	text-align:left;
+	direction:ltr;
+}
+fieldset{
+	border: 1px solid silver;
+	padding:5px;
+}
+fieldset legend{
+	padding: 5px;
+	border: 1px silver solid;
+	background-image: url('images/Textbox.jpg');
+	background-repeat: repeat-x;
+	background-position: center top;
+}
+.w200{
+	width:200px;
+}
+.h150{
+	height:150px;
+}
+#RightSide
+{
+    width:190px;
+    border:1px solid #cfcfcf;
+    padding:5px;
+    margin: 5px 0px;
+    float:right;
+}
+#LeftSide
+{
+    margin-right: 215px;
+}
+.line
+{
+    border-bottom: #333333 1px dotted;
+    margin:2px 5px;
+}
+.dataTable
+{
+    border-collapse: collapse;
+    border: 1px solid #B0D8FF;
+    width:99%;
+}
+.dataTable td, .dataTable th
+{
+    padding:5px;
+    margin:0px;
+    border: 1px solid #B0D8FF;
+}

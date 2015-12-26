@@ -1,0 +1,1 @@
+﻿xsd C:\Users\Mahdi\Documents\Projects\NetTalkSite\NetTalk.Web\App_Data\Application.xsd /out:C:\Users\Mahdi\Documents\Projects\NetTalkSite\NetTalk.Web\Codes /c /n:NetTalk.Web.Codes.XMLConfig

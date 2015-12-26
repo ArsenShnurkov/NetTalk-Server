@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NetTalkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="TbAlerts">
+          <Key>
+            <PropertyRef Name="AlertId" />
+          </Key>
+          <Property Name="AlertId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AlertText" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="AlertTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="AlertHTML" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TbFriend">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="FriendId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FriendStatus" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbLogs">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LogText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LogDate" Type="datetime" Nullable="false" />
+          <Property Name="LogSessionId" Type="varchar" MaxLength="10" />
+          <Property Name="LogUserId" Type="uniqueidentifier" />
+          <Property Name="LogIP" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TbMessage">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageDate" Type="datetime" Nullable="false" />
+          <Property Name="MessageViewDate" Type="datetime" />
+          <Property Name="MessageFromUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageToUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MessageHTML" Type="nvarchar(max)" />
+          <Property Name="MessageSenderIP" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPassCrypt" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserPassSalt" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="UserLastLoginDate" Type="datetime" />
+          <Property Name="UserPrevLoginDate" Type="datetime" />
+          <Property Name="UserLastChangePass" Type="datetime" />
+          <Property Name="UserWebAdmin" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbUserStatus">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserStatus" Type="smallint" Nullable="false" />
+          <Property Name="UserStatusText" Type="nvarchar" MaxLength="1000" />
+          <Property Name="UserIsOnline" Type="bit" Nullable="false" />
+          <Property Name="UserStatusDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbVcard">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="VcardURL" Type="nvarchar" MaxLength="300" />
+          <Property Name="VcardTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="VcardFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VcardLastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VcardPhoto" Type="varchar" MaxLength="100" />
+          <Property Name="VcardOrgName" Type="nvarchar" MaxLength="100" />
+          <Property Name="VcardOrgUnit" Type="nvarchar" MaxLength="100" />
+          <Property Name="VcardNickname" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardDescription" Type="nvarchar" MaxLength="300" />
+          <Property Name="VcardBirthday" Type="datetime" />
+          <Property Name="VcardEmail" Type="nvarchar" MaxLength="200" />
+          <Property Name="VcardTelCell" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardTelFax" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardTelVoice" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardTelVoice2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NetTalk.dbo.VwFriend' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwFriend">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="FriendId" />
+            <PropertyRef Name="FriendUserName" />
+            <PropertyRef Name="FriendStatus" />
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FriendUserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserStatus" Type="smallint" />
+          <Property Name="UserStatusText" Type="nvarchar" MaxLength="1000" />
+          <Property Name="VcardFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardPhoto" Type="varchar" MaxLength="100" />
+          <Property Name="VcardOrgName" Type="nvarchar" MaxLength="100" />
+          <Property Name="VcardOrgUnit" Type="nvarchar" MaxLength="100" />
+          <Property Name="FriendStatus" Type="tinyint" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserIsOnline" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NetTalk.dbo.VwLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+            <PropertyRef Name="LogText" />
+            <PropertyRef Name="LogDate" />
+          </Key>
+          <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LogText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LogDate" Type="datetime" Nullable="false" />
+          <Property Name="LogSessionId" Type="varchar" MaxLength="10" />
+          <Property Name="LogUserId" Type="uniqueidentifier" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardPhoto" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NetTalk.dbo.VwMessage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwMessage">
+          <Key>
+            <PropertyRef Name="MessageId" />
+            <PropertyRef Name="MessageDate" />
+            <PropertyRef Name="MessageFromUserId" />
+            <PropertyRef Name="MessageToUserId" />
+            <PropertyRef Name="MessageText" />
+            <PropertyRef Name="MessageSenderIP" />
+          </Key>
+          <Property Name="MessageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageDate" Type="datetime" Nullable="false" />
+          <Property Name="MessageViewDate" Type="datetime" />
+          <Property Name="MessageFromUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageToUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MessageHTML" Type="nvarchar(max)" />
+          <Property Name="MessageSenderIP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="MessageFromFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageFromLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageFromPhoto" Type="varchar" MaxLength="100" />
+          <Property Name="MessageToFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageToLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageToPhoto" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NetTalk.dbo.VwMessageOffline' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwMessageOffline">
+          <Key>
+            <PropertyRef Name="MessageId" />
+            <PropertyRef Name="MessageDate" />
+            <PropertyRef Name="MessageFromUserId" />
+            <PropertyRef Name="MessageToUserId" />
+            <PropertyRef Name="MessageText" />
+            <PropertyRef Name="MessageSenderIP" />
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="MessageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageDate" Type="datetime" Nullable="false" />
+          <Property Name="MessageViewDate" Type="datetime" />
+          <Property Name="MessageFromUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageToUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MessageHTML" Type="nvarchar(max)" />
+          <Property Name="MessageSenderIP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NetTalk.dbo.VwUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserLastLoginDate" Type="datetime" />
+          <Property Name="UserPrevLoginDate" Type="datetime" />
+          <Property Name="UserLastChangePass" Type="datetime" />
+          <Property Name="VcardFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VcardPhoto" Type="varchar" MaxLength="100" />
+          <Property Name="VcardOrgName" Type="nvarchar" MaxLength="100" />
+          <Property Name="VcardOrgUnit" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserStatus" Type="smallint" />
+          <Property Name="UserStatusText" Type="nvarchar" MaxLength="1000" />
+          <Property Name="UserIsOnline" Type="bit" />
+        </EntityType>
+        <Association Name="FK_TbFriend_TbUsers">
+          <End Role="TbUsers" Type="Self.TbUsers" Multiplicity="1" />
+          <End Role="TbFriend" Type="Self.TbFriend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbFriend">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbFriend_TbUsers1">
+          <End Role="TbUsers" Type="Self.TbUsers" Multiplicity="1" />
+          <End Role="TbFriend" Type="Self.TbFriend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbFriend">
+              <PropertyRef Name="FriendId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbMessage_TbUsers">
+          <End Role="TbUsers" Type="Self.TbUsers" Multiplicity="1" />
+          <End Role="TbMessage" Type="Self.TbMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbMessage">
+              <PropertyRef Name="MessageFromUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbMessage_TbUsers1">
+          <End Role="TbUsers" Type="Self.TbUsers" Multiplicity="1" />
+          <End Role="TbMessage" Type="Self.TbMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbMessage">
+              <PropertyRef Name="MessageToUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbUserStatus_TbUsers">
+          <End Role="TbUsers" Type="Self.TbUsers" Multiplicity="1" />
+          <End Role="TbUserStatus" Type="Self.TbUserStatus" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbUserStatus">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbVcard_TbUsers">
+          <End Role="TbUsers" Type="Self.TbUsers" Multiplicity="1" />
+          <End Role="TbVcard" Type="Self.TbVcard" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbVcard">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NetTalkModelStoreContainer">
+          <EntitySet Name="TbAlerts" EntityType="Self.TbAlerts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbFriend" EntityType="Self.TbFriend" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbLogs" EntityType="Self.TbLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbMessage" EntityType="Self.TbMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbUsers" EntityType="Self.TbUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbUserStatus" EntityType="Self.TbUserStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbVcard" EntityType="Self.TbVcard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VwFriend" EntityType="Self.VwFriend" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VwFriend].[UserId] AS [UserId], 
+[VwFriend].[FriendId] AS [FriendId], 
+[VwFriend].[GroupName] AS [GroupName], 
+[VwFriend].[FriendUserName] AS [FriendUserName], 
+[VwFriend].[UserStatus] AS [UserStatus], 
+[VwFriend].[UserStatusText] AS [UserStatusText], 
+[VwFriend].[VcardFirstName] AS [VcardFirstName], 
+[VwFriend].[VcardLastName] AS [VcardLastName], 
+[VwFriend].[VcardPhoto] AS [VcardPhoto], 
+[VwFriend].[VcardOrgName] AS [VcardOrgName], 
+[VwFriend].[VcardOrgUnit] AS [VcardOrgUnit], 
+[VwFriend].[FriendStatus] AS [FriendStatus], 
+[VwFriend].[Username] AS [Username], 
+[VwFriend].[UserIsOnline] AS [UserIsOnline]
+FROM [dbo].[VwFriend] AS [VwFriend]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwLog" EntityType="Self.VwLog" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VwLog].[LogId] AS [LogId], 
+[VwLog].[LogText] AS [LogText], 
+[VwLog].[LogDate] AS [LogDate], 
+[VwLog].[LogSessionId] AS [LogSessionId], 
+[VwLog].[LogUserId] AS [LogUserId], 
+[VwLog].[Username] AS [Username], 
+[VwLog].[VcardFirstName] AS [VcardFirstName], 
+[VwLog].[VcardLastName] AS [VcardLastName], 
+[VwLog].[VcardPhoto] AS [VcardPhoto]
+FROM [dbo].[VwLog] AS [VwLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwMessage" EntityType="Self.VwMessage" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VwMessage].[MessageId] AS [MessageId], 
+[VwMessage].[MessageDate] AS [MessageDate], 
+[VwMessage].[MessageViewDate] AS [MessageViewDate], 
+[VwMessage].[MessageFromUserId] AS [MessageFromUserId], 
+[VwMessage].[MessageToUserId] AS [MessageToUserId], 
+[VwMessage].[MessageText] AS [MessageText], 
+[VwMessage].[MessageHTML] AS [MessageHTML], 
+[VwMessage].[MessageSenderIP] AS [MessageSenderIP], 
+[VwMessage].[MessageFromFirstName] AS [MessageFromFirstName], 
+[VwMessage].[MessageFromLastName] AS [MessageFromLastName], 
+[VwMessage].[MessageFromPhoto] AS [MessageFromPhoto], 
+[VwMessage].[MessageToFirstName] AS [MessageToFirstName], 
+[VwMessage].[MessageToLastName] AS [MessageToLastName], 
+[VwMessage].[MessageToPhoto] AS [MessageToPhoto]
+FROM [dbo].[VwMessage] AS [VwMessage]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwMessageOffline" EntityType="Self.VwMessageOffline" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VwMessageOffline].[MessageId] AS [MessageId], 
+[VwMessageOffline].[MessageDate] AS [MessageDate], 
+[VwMessageOffline].[MessageViewDate] AS [MessageViewDate], 
+[VwMessageOffline].[MessageFromUserId] AS [MessageFromUserId], 
+[VwMessageOffline].[MessageToUserId] AS [MessageToUserId], 
+[VwMessageOffline].[MessageText] AS [MessageText], 
+[VwMessageOffline].[MessageHTML] AS [MessageHTML], 
+[VwMessageOffline].[MessageSenderIP] AS [MessageSenderIP], 
+[VwMessageOffline].[Username] AS [Username]
+FROM [dbo].[VwMessageOffline] AS [VwMessageOffline]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwUsers" EntityType="Self.VwUsers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VwUsers].[UserId] AS [UserId], 
+[VwUsers].[Username] AS [Username], 
+[VwUsers].[UserLastLoginDate] AS [UserLastLoginDate], 
+[VwUsers].[UserPrevLoginDate] AS [UserPrevLoginDate], 
+[VwUsers].[UserLastChangePass] AS [UserLastChangePass], 
+[VwUsers].[VcardFirstName] AS [VcardFirstName], 
+[VwUsers].[VcardLastName] AS [VcardLastName], 
+[VwUsers].[VcardPhoto] AS [VcardPhoto], 
+[VwUsers].[VcardOrgName] AS [VcardOrgName], 
+[VwUsers].[VcardOrgUnit] AS [VcardOrgUnit], 
+[VwUsers].[UserStatus] AS [UserStatus], 
+[VwUsers].[UserStatusText] AS [UserStatusText], 
+[VwUsers].[UserIsOnline] AS [UserIsOnline]
+FROM [dbo].[VwUsers] AS [VwUsers]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_TbFriend_TbUsers" Association="Self.FK_TbFriend_TbUsers">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbFriend" EntitySet="TbFriend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbFriend_TbUsers1" Association="Self.FK_TbFriend_TbUsers1">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbFriend" EntitySet="TbFriend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbMessage_TbUsers" Association="Self.FK_TbMessage_TbUsers">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbMessage" EntitySet="TbMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbMessage_TbUsers1" Association="Self.FK_TbMessage_TbUsers1">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbMessage" EntitySet="TbMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbUserStatus_TbUsers" Association="Self.FK_TbUserStatus_TbUsers">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbUserStatus" EntitySet="TbUserStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbVcard_TbUsers" Association="Self.FK_TbVcard_TbUsers">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbVcard" EntitySet="TbVcard" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NetTalkModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="NetTalkEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="DeleteUser">
+          <Parameter Name="UserId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <EntitySet Name="TbAlerts" EntityType="NetTalkModel.TbAlerts" />
+          <EntitySet Name="TbFriend" EntityType="NetTalkModel.TbFriend" />
+          <EntitySet Name="TbLogs" EntityType="NetTalkModel.TbLogs" />
+          <EntitySet Name="TbMessage" EntityType="NetTalkModel.TbMessage" />
+          <EntitySet Name="TbUsers" EntityType="NetTalkModel.TbUsers" />
+          <EntitySet Name="TbUserStatus" EntityType="NetTalkModel.TbUserStatus" />
+          <EntitySet Name="TbVcard" EntityType="NetTalkModel.TbVcard" />
+          <EntitySet Name="VwFriend" EntityType="NetTalkModel.VwFriend" />
+          <EntitySet Name="VwLog" EntityType="NetTalkModel.VwLog" />
+          <EntitySet Name="VwMessage" EntityType="NetTalkModel.VwMessage" />
+          <EntitySet Name="VwMessageOffline" EntityType="NetTalkModel.VwMessageOffline" />
+          <EntitySet Name="VwUsers" EntityType="NetTalkModel.VwUsers" />
+          <AssociationSet Name="FK_TbFriend_TbUsers" Association="NetTalkModel.FK_TbFriend_TbUsers">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbFriend" EntitySet="TbFriend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbFriend_TbUsers1" Association="NetTalkModel.FK_TbFriend_TbUsers1">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbFriend" EntitySet="TbFriend" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbMessage_TbUsers" Association="NetTalkModel.FK_TbMessage_TbUsers">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbMessage" EntitySet="TbMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbMessage_TbUsers1" Association="NetTalkModel.FK_TbMessage_TbUsers1">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbMessage" EntitySet="TbMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbUserStatus_TbUsers" Association="NetTalkModel.FK_TbUserStatus_TbUsers">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbUserStatus" EntitySet="TbUserStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbVcard_TbUsers" Association="NetTalkModel.FK_TbVcard_TbUsers">
+            <End Role="TbUsers" EntitySet="TbUsers" />
+            <End Role="TbVcard" EntitySet="TbVcard" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TbAlerts">
+          <Key>
+            <PropertyRef Name="AlertId" />
+          </Key>
+          <Property Name="AlertId" Type="Guid" Nullable="false" />
+          <Property Name="AlertText" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AlertTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="AlertHTML" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TbFriend">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="FriendId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="FriendId" Type="Guid" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FriendStatus" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="TbUsers" Relationship="NetTalkModel.FK_TbFriend_TbUsers" FromRole="TbFriend" ToRole="TbUsers" />
+          <NavigationProperty Name="TbUsers1" Relationship="NetTalkModel.FK_TbFriend_TbUsers1" FromRole="TbFriend" ToRole="TbUsers" />
+        </EntityType>
+        <EntityType Name="TbLogs">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="Guid" Nullable="false" />
+          <Property Name="LogText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LogSessionId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserId" Type="Guid" />
+          <Property Name="LogIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TbMessage">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="Guid" Nullable="false" />
+          <Property Name="MessageDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MessageViewDate" Type="DateTime" Precision="3" />
+          <Property Name="MessageFromUserId" Type="Guid" Nullable="false" />
+          <Property Name="MessageToUserId" Type="Guid" Nullable="false" />
+          <Property Name="MessageText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageHTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageSenderIP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TbUsers" Relationship="NetTalkModel.FK_TbMessage_TbUsers" FromRole="TbMessage" ToRole="TbUsers" />
+          <NavigationProperty Name="TbUsers1" Relationship="NetTalkModel.FK_TbMessage_TbUsers1" FromRole="TbMessage" ToRole="TbUsers" />
+        </EntityType>
+        <EntityType Name="TbUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPassCrypt" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassSalt" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="UserLastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="UserPrevLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="UserLastChangePass" Type="DateTime" Precision="3" />
+          <Property Name="UserWebAdmin" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TbFriend" Relationship="NetTalkModel.FK_TbFriend_TbUsers" FromRole="TbUsers" ToRole="TbFriend" />
+          <NavigationProperty Name="TbFriend1" Relationship="NetTalkModel.FK_TbFriend_TbUsers1" FromRole="TbUsers" ToRole="TbFriend" />
+          <NavigationProperty Name="TbMessage" Relationship="NetTalkModel.FK_TbMessage_TbUsers" FromRole="TbUsers" ToRole="TbMessage" />
+          <NavigationProperty Name="TbMessage1" Relationship="NetTalkModel.FK_TbMessage_TbUsers1" FromRole="TbUsers" ToRole="TbMessage" />
+          <NavigationProperty Name="TbUserStatus" Relationship="NetTalkModel.FK_TbUserStatus_TbUsers" FromRole="TbUsers" ToRole="TbUserStatus" />
+          <NavigationProperty Name="TbVcard" Relationship="NetTalkModel.FK_TbVcard_TbUsers" FromRole="TbUsers" ToRole="TbVcard" />
+        </EntityType>
+        <EntityType Name="TbUserStatus">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserStatus" Type="Int16" Nullable="false" />
+          <Property Name="UserStatusText" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="UserIsOnline" Type="Boolean" Nullable="false" />
+          <Property Name="UserStatusDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TbUsers" Relationship="NetTalkModel.FK_TbUserStatus_TbUsers" FromRole="TbUserStatus" ToRole="TbUsers" />
+        </EntityType>
+        <EntityType Name="TbVcard">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="VcardURL" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="VcardTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VcardFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardLastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VcardOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VcardOrgUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VcardNickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardDescription" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="VcardBirthday" Type="DateTime" Precision="3" />
+          <Property Name="VcardEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VcardTelCell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardTelFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardTelVoice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardTelVoice2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TbUsers" Relationship="NetTalkModel.FK_TbVcard_TbUsers" FromRole="TbVcard" ToRole="TbUsers" />
+        </EntityType>
+        <EntityType Name="VwFriend">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="FriendId" />
+            <PropertyRef Name="FriendUserName" />
+            <PropertyRef Name="FriendStatus" />
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="FriendId" Type="Guid" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FriendUserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserStatus" Type="Int16" />
+          <Property Name="UserStatusText" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="VcardFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VcardOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VcardOrgUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FriendStatus" Type="Byte" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserIsOnline" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="VwLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+            <PropertyRef Name="LogText" />
+            <PropertyRef Name="LogDate" />
+          </Key>
+          <Property Name="LogId" Type="Guid" Nullable="false" />
+          <Property Name="LogText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LogSessionId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LogUserId" Type="Guid" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VwMessage">
+          <Key>
+            <PropertyRef Name="MessageId" />
+            <PropertyRef Name="MessageDate" />
+            <PropertyRef Name="MessageFromUserId" />
+            <PropertyRef Name="MessageToUserId" />
+            <PropertyRef Name="MessageText" />
+            <PropertyRef Name="MessageSenderIP" />
+          </Key>
+          <Property Name="MessageId" Type="Guid" Nullable="false" />
+          <Property Name="MessageDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MessageViewDate" Type="DateTime" Precision="3" />
+          <Property Name="MessageFromUserId" Type="Guid" Nullable="false" />
+          <Property Name="MessageToUserId" Type="Guid" Nullable="false" />
+          <Property Name="MessageText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageHTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageSenderIP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MessageFromFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MessageFromLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MessageFromPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MessageToFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MessageToLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MessageToPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VwMessageOffline">
+          <Key>
+            <PropertyRef Name="MessageId" />
+            <PropertyRef Name="MessageDate" />
+            <PropertyRef Name="MessageFromUserId" />
+            <PropertyRef Name="MessageToUserId" />
+            <PropertyRef Name="MessageText" />
+            <PropertyRef Name="MessageSenderIP" />
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="MessageId" Type="Guid" Nullable="false" />
+          <Property Name="MessageDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MessageViewDate" Type="DateTime" Precision="3" />
+          <Property Name="MessageFromUserId" Type="Guid" Nullable="false" />
+          <Property Name="MessageToUserId" Type="Guid" Nullable="false" />
+          <Property Name="MessageText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageHTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageSenderIP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VwUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserLastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="UserPrevLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="UserLastChangePass" Type="DateTime" Precision="3" />
+          <Property Name="VcardFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VcardPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VcardOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VcardOrgUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserStatus" Type="Int16" />
+          <Property Name="UserStatusText" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="UserIsOnline" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_TbFriend_TbUsers">
+          <End Type="NetTalkModel.TbUsers" Role="TbUsers" Multiplicity="1" />
+          <End Type="NetTalkModel.TbFriend" Role="TbFriend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbFriend">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbFriend_TbUsers1">
+          <End Type="NetTalkModel.TbUsers" Role="TbUsers" Multiplicity="1" />
+          <End Type="NetTalkModel.TbFriend" Role="TbFriend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbFriend">
+              <PropertyRef Name="FriendId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbMessage_TbUsers">
+          <End Type="NetTalkModel.TbUsers" Role="TbUsers" Multiplicity="1" />
+          <End Type="NetTalkModel.TbMessage" Role="TbMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbMessage">
+              <PropertyRef Name="MessageFromUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbMessage_TbUsers1">
+          <End Type="NetTalkModel.TbUsers" Role="TbUsers" Multiplicity="1" />
+          <End Type="NetTalkModel.TbMessage" Role="TbMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbMessage">
+              <PropertyRef Name="MessageToUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbUserStatus_TbUsers">
+          <End Type="NetTalkModel.TbUsers" Role="TbUsers" Multiplicity="1" />
+          <End Type="NetTalkModel.TbUserStatus" Role="TbUserStatus" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbUserStatus">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbVcard_TbUsers">
+          <End Type="NetTalkModel.TbUsers" Role="TbUsers" Multiplicity="1" />
+          <End Type="NetTalkModel.TbVcard" Role="TbVcard" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TbUsers">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TbVcard">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NetTalkModelStoreContainer" CdmEntityContainer="NetTalkEntities">
+          <EntitySetMapping Name="TbAlerts">
+            <EntityTypeMapping TypeName="NetTalkModel.TbAlerts">
+              <MappingFragment StoreEntitySet="TbAlerts">
+                <ScalarProperty Name="AlertHTML" ColumnName="AlertHTML" />
+                <ScalarProperty Name="AlertTime" ColumnName="AlertTime" />
+                <ScalarProperty Name="AlertText" ColumnName="AlertText" />
+                <ScalarProperty Name="AlertId" ColumnName="AlertId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbFriend">
+            <EntityTypeMapping TypeName="NetTalkModel.TbFriend">
+              <MappingFragment StoreEntitySet="TbFriend">
+                <ScalarProperty Name="FriendStatus" ColumnName="FriendStatus" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbLogs">
+            <EntityTypeMapping TypeName="NetTalkModel.TbLogs">
+              <MappingFragment StoreEntitySet="TbLogs">
+                <ScalarProperty Name="LogIP" ColumnName="LogIP" />
+                <ScalarProperty Name="LogUserId" ColumnName="LogUserId" />
+                <ScalarProperty Name="LogSessionId" ColumnName="LogSessionId" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="LogText" ColumnName="LogText" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbMessage">
+            <EntityTypeMapping TypeName="NetTalkModel.TbMessage">
+              <MappingFragment StoreEntitySet="TbMessage">
+                <ScalarProperty Name="MessageSenderIP" ColumnName="MessageSenderIP" />
+                <ScalarProperty Name="MessageHTML" ColumnName="MessageHTML" />
+                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+                <ScalarProperty Name="MessageToUserId" ColumnName="MessageToUserId" />
+                <ScalarProperty Name="MessageFromUserId" ColumnName="MessageFromUserId" />
+                <ScalarProperty Name="MessageViewDate" ColumnName="MessageViewDate" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbUsers">
+            <EntityTypeMapping TypeName="NetTalkModel.TbUsers">
+              <MappingFragment StoreEntitySet="TbUsers">
+                <ScalarProperty Name="UserWebAdmin" ColumnName="UserWebAdmin" />
+                <ScalarProperty Name="UserLastChangePass" ColumnName="UserLastChangePass" />
+                <ScalarProperty Name="UserPrevLoginDate" ColumnName="UserPrevLoginDate" />
+                <ScalarProperty Name="UserLastLoginDate" ColumnName="UserLastLoginDate" />
+                <ScalarProperty Name="UserPassSalt" ColumnName="UserPassSalt" />
+                <ScalarProperty Name="UserPassCrypt" ColumnName="UserPassCrypt" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbUserStatus">
+            <EntityTypeMapping TypeName="NetTalkModel.TbUserStatus">
+              <MappingFragment StoreEntitySet="TbUserStatus">
+                <ScalarProperty Name="UserStatusDate" ColumnName="UserStatusDate" />
+                <ScalarProperty Name="UserIsOnline" ColumnName="UserIsOnline" />
+                <ScalarProperty Name="UserStatusText" ColumnName="UserStatusText" />
+                <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbVcard">
+            <EntityTypeMapping TypeName="NetTalkModel.TbVcard">
+              <MappingFragment StoreEntitySet="TbVcard">
+                <ScalarProperty Name="VcardTelVoice2" ColumnName="VcardTelVoice2" />
+                <ScalarProperty Name="VcardTelVoice" ColumnName="VcardTelVoice" />
+                <ScalarProperty Name="VcardTelFax" ColumnName="VcardTelFax" />
+                <ScalarProperty Name="VcardTelCell" ColumnName="VcardTelCell" />
+                <ScalarProperty Name="VcardEmail" ColumnName="VcardEmail" />
+                <ScalarProperty Name="VcardBirthday" ColumnName="VcardBirthday" />
+                <ScalarProperty Name="VcardDescription" ColumnName="VcardDescription" />
+                <ScalarProperty Name="VcardNickname" ColumnName="VcardNickname" />
+                <ScalarProperty Name="VcardOrgUnit" ColumnName="VcardOrgUnit" />
+                <ScalarProperty Name="VcardOrgName" ColumnName="VcardOrgName" />
+                <ScalarProperty Name="VcardPhoto" ColumnName="VcardPhoto" />
+                <ScalarProperty Name="VcardLastName" ColumnName="VcardLastName" />
+                <ScalarProperty Name="VcardFirstName" ColumnName="VcardFirstName" />
+                <ScalarProperty Name="VcardTitle" ColumnName="VcardTitle" />
+                <ScalarProperty Name="VcardURL" ColumnName="VcardURL" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwFriend">
+            <EntityTypeMapping TypeName="NetTalkModel.VwFriend">
+              <MappingFragment StoreEntitySet="VwFriend">
+                <ScalarProperty Name="UserIsOnline" ColumnName="UserIsOnline" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="FriendStatus" ColumnName="FriendStatus" />
+                <ScalarProperty Name="VcardOrgUnit" ColumnName="VcardOrgUnit" />
+                <ScalarProperty Name="VcardOrgName" ColumnName="VcardOrgName" />
+                <ScalarProperty Name="VcardPhoto" ColumnName="VcardPhoto" />
+                <ScalarProperty Name="VcardLastName" ColumnName="VcardLastName" />
+                <ScalarProperty Name="VcardFirstName" ColumnName="VcardFirstName" />
+                <ScalarProperty Name="UserStatusText" ColumnName="UserStatusText" />
+                <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+                <ScalarProperty Name="FriendUserName" ColumnName="FriendUserName" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwLog">
+            <EntityTypeMapping TypeName="NetTalkModel.VwLog">
+              <MappingFragment StoreEntitySet="VwLog">
+                <ScalarProperty Name="VcardPhoto" ColumnName="VcardPhoto" />
+                <ScalarProperty Name="VcardLastName" ColumnName="VcardLastName" />
+                <ScalarProperty Name="VcardFirstName" ColumnName="VcardFirstName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LogUserId" ColumnName="LogUserId" />
+                <ScalarProperty Name="LogSessionId" ColumnName="LogSessionId" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="LogText" ColumnName="LogText" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwMessage">
+            <EntityTypeMapping TypeName="NetTalkModel.VwMessage">
+              <MappingFragment StoreEntitySet="VwMessage">
+                <ScalarProperty Name="MessageToPhoto" ColumnName="MessageToPhoto" />
+                <ScalarProperty Name="MessageToLastName" ColumnName="MessageToLastName" />
+                <ScalarProperty Name="MessageToFirstName" ColumnName="MessageToFirstName" />
+                <ScalarProperty Name="MessageFromPhoto" ColumnName="MessageFromPhoto" />
+                <ScalarProperty Name="MessageFromLastName" ColumnName="MessageFromLastName" />
+                <ScalarProperty Name="MessageFromFirstName" ColumnName="MessageFromFirstName" />
+                <ScalarProperty Name="MessageSenderIP" ColumnName="MessageSenderIP" />
+                <ScalarProperty Name="MessageHTML" ColumnName="MessageHTML" />
+                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+                <ScalarProperty Name="MessageToUserId" ColumnName="MessageToUserId" />
+                <ScalarProperty Name="MessageFromUserId" ColumnName="MessageFromUserId" />
+                <ScalarProperty Name="MessageViewDate" ColumnName="MessageViewDate" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwMessageOffline">
+            <EntityTypeMapping TypeName="NetTalkModel.VwMessageOffline">
+              <MappingFragment StoreEntitySet="VwMessageOffline">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="MessageSenderIP" ColumnName="MessageSenderIP" />
+                <ScalarProperty Name="MessageHTML" ColumnName="MessageHTML" />
+                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+                <ScalarProperty Name="MessageToUserId" ColumnName="MessageToUserId" />
+                <ScalarProperty Name="MessageFromUserId" ColumnName="MessageFromUserId" />
+                <ScalarProperty Name="MessageViewDate" ColumnName="MessageViewDate" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwUsers">
+            <EntityTypeMapping TypeName="NetTalkModel.VwUsers">
+              <MappingFragment StoreEntitySet="VwUsers">
+                <ScalarProperty Name="UserIsOnline" ColumnName="UserIsOnline" />
+                <ScalarProperty Name="UserStatusText" ColumnName="UserStatusText" />
+                <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+                <ScalarProperty Name="VcardOrgUnit" ColumnName="VcardOrgUnit" />
+                <ScalarProperty Name="VcardOrgName" ColumnName="VcardOrgName" />
+                <ScalarProperty Name="VcardPhoto" ColumnName="VcardPhoto" />
+                <ScalarProperty Name="VcardLastName" ColumnName="VcardLastName" />
+                <ScalarProperty Name="VcardFirstName" ColumnName="VcardFirstName" />
+                <ScalarProperty Name="UserLastChangePass" ColumnName="UserLastChangePass" />
+                <ScalarProperty Name="UserPrevLoginDate" ColumnName="UserPrevLoginDate" />
+                <ScalarProperty Name="UserLastLoginDate" ColumnName="UserLastLoginDate" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="NetTalkModel.TbAlerts" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NetTalkModel.TbFriend" Width="1.5" PointX="3" PointY="1.5" />
+        <EntityTypeShape EntityType="NetTalkModel.TbLogs" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="NetTalkModel.TbMessage" Width="1.5" PointX="3" PointY="9.5" />
+        <EntityTypeShape EntityType="NetTalkModel.TbUsers" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="NetTalkModel.TbUserStatus" Width="1.5" PointX="3" PointY="13.125" />
+        <EntityTypeShape EntityType="NetTalkModel.TbVcard" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="NetTalkModel.VwFriend" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="NetTalkModel.VwLog" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NetTalkModel.VwMessage" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="NetTalkModel.VwMessageOffline" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NetTalkModel.VwUsers" Width="1.5" PointX="9.75" PointY="4.75" />
+        <AssociationConnector Association="NetTalkModel.FK_TbFriend_TbUsers" />
+        <AssociationConnector Association="NetTalkModel.FK_TbFriend_TbUsers1" />
+        <AssociationConnector Association="NetTalkModel.FK_TbMessage_TbUsers" />
+        <AssociationConnector Association="NetTalkModel.FK_TbMessage_TbUsers1" />
+        <AssociationConnector Association="NetTalkModel.FK_TbUserStatus_TbUsers" />
+        <AssociationConnector Association="NetTalkModel.FK_TbVcard_TbUsers" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

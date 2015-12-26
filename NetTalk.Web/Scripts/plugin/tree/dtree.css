@@ -1,0 +1,30 @@
+﻿.TreeNode
+{
+    font-family: Tahoma;
+    font-size: 8pt;
+}
+.TreeNode a
+{
+    text-decoration: none;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.TreeNode img
+{
+    vertical-align: middle;
+    margin: 0px;
+    padding: 0px;
+}
+.TreeNode input
+{
+    padding: 0px;
+    margin: 0px;
+}
+.TreeNodeChilds
+{
+    display: none;
+}
+.TreeImage
+{
+    cursor: pointer;
+}
